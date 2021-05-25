@@ -9,10 +9,12 @@ const path = require('path');
 const sauceRoutes = require('./routes/sauces');        // importation de router
 const userRoutes = require('./routes/user');
 
+require('dotenv').config()  // Stockage du mot de passe en dans un autre environnement
+
 const app = express();
 
 // Connexion à MongoDB
-const mongodbUrl = 'mongodb+srv://Haltay:h12c12j07d@piquante.wwzlr.mongodb.net/Piquante?retryWrites=true&w=majority';
+const mongodbUrl = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_HOST}/${process.env.DB_NAME}?retryWrites=true&w=majority`;
 mongoose.connect(mongodbUrl,
   { useNewUrlParser: true,
     useUnifiedTopology: true })
