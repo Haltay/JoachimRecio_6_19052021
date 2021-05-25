@@ -3,6 +3,7 @@
 const express = require('express'); // utilisation de express
 const bodyParser = require('body-parser'); // utilisation de body parser pour transformer le corps de la requete en json
 const mongoose = require('mongoose'); // utilisation du serveur MongoDb
+const helmet = require('helmet'); // Pour la securité (en configurant de manière adéquate les en-têtes HTTP)
 const path = require('path');
 
 const sauceRoutes = require('./routes/sauces');        // importation de router
@@ -25,6 +26,9 @@ app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
     next();
 });
+
+// Utilisation de Helmet
+app.use(helmet());
 
 // utilisation de body parser pour création d'un nouvel objet
 app.use(bodyParser.json());
