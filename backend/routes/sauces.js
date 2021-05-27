@@ -20,7 +20,7 @@ router.get('/:id', auth, saucesCtrl.getOneSauce);
 // récuperation dans la base de données des sauces
 router.get('/', auth, saucesCtrl.getAllSauces);
 
-// gestion duu like (1) ou non (0) de la sauce
+// gestion du like (1) ou non (0) de la sauce
 router.post('/:id/like', auth, saucesCtrl.userLike);
 
 module.exports = router;

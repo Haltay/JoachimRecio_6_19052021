@@ -1,4 +1,3 @@
-// Utilisation de Express
 
 const express = require('express'); // utilisation de express
 const bodyParser = require('body-parser'); // utilisation de body parser pour transformer le corps de la requete en json
