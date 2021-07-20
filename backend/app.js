@@ -3,12 +3,12 @@ const express = require('express'); // utilisation de express
 const bodyParser = require('body-parser'); // utilisation de body parser pour transformer le corps de la requete en json
 const mongoose = require('mongoose'); // utilisation du serveur MongoDb
 const helmet = require('helmet'); // Pour la securité (en configurant de manière adéquate les en-têtes HTTP)
-const path = require('path');
+const path = require('path');   // Pour travailler avec des repertoires et des chemins de fichiers
 
-const sauceRoutes = require('./routes/sauces');        // importation de router
-const userRoutes = require('./routes/user');
+const sauceRoutes = require('./routes/sauces');        // importation de router pour les sauces
+const userRoutes = require('./routes/user');            // importation de router pour l'user
 
-require('dotenv').config()  // Stockage du mot de passe en dans un autre environnement
+require('dotenv').config();  // Stockage des données sensibles dans un autre environnement (.env)
 
 const app = express();
 
